@@ -1,5 +1,5 @@
 
-resource "aws_security_group" "allow_ssh_and_docker" {
+resource "aws_security_group" "docker" {
   name        = "allow_ssh_and_docker"
   description = "Allow SSH and docker"
   vpc_id      = "${var.vpc_id}"
