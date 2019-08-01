@@ -3,7 +3,7 @@ resource "aws_instance" "docker" {
   ami                         = "${var.ami}"
   key_name                    = "${var.key_name}"
   associate_public_ip_address = "true"
-  security_groups             = ["allow_ssh_and_docker"]
+  security_groups             = ["${aws_security_group.docker}"]
 
 
   provisioner "remote-exec" {
