@@ -8,4 +8,4 @@ variable "zone_id" {}
 variable "domain" {}
 variable "region" {}
 variable "tag_name" {}
-variable "var.backend_key" {}
+variable "backend_key" {}
