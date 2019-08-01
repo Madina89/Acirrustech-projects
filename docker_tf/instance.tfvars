@@ -7,3 +7,4 @@ ssh_key_location = "/ssh_keys/app_rsa" # Iport public key pair to AWS as "terraf
 zone_id = "Z32OHGRMBVZ9LR" # Hosted DNS zone and ID was added here
 domain = "acirrustech.com"
 region = "us-east-2"
+tag_name = "Docker-Dev"

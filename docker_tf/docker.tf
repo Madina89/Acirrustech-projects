@@ -1,4 +1,4 @@
-resource "aws_instance" "docker" {
+resource "aws_instance" "docker-dev" {
   instance_type               = "${var.instance_type}"
   ami                         = "${var.ami}"
   key_name                    = "${var.key_name}"
@@ -22,6 +22,6 @@ resource "aws_instance" "docker" {
   }
 
   tags = {
-    Name = "Docker"
+    Name = "${var.tag_name}"
   }
 }
