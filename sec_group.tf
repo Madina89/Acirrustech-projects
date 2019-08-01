@@ -1,7 +1,7 @@
 
-resource "aws_security_group" "allow_ssh_and_jenkins" {
-  name        = "allow_ssh_and_jenkins"
-  description = "Allow SSH and jenkins"
+resource "aws_security_group" "allow_ssh_and_docker" {
+  name        = "allow_ssh_and_docker"
+  description = "Allow SSH and docker"
   vpc_id      = "${var.vpc_id}"
 
   ingress {

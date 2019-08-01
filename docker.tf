@@ -1,8 +1,4 @@
-provider "aws" {
-  region = "${var.region}"
-}
-
-resource "aws_instance" "jenkins" {
+resource "aws_instance" "docker" {
   instance_type               = "${var.instance_type}"
   ami                         = "${var.ami}"
   key_name                    = "${var.key_name}"
@@ -19,14 +15,16 @@ resource "aws_instance" "jenkins" {
     }
 
     inline = [
-      "sudo yum install java-1.8.0-openjdk-devel curl -y",
-      "curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo",
-      "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
-      "sudo yum install jenkins -y",
-      "sudo systemctl start jenkins"
+      "sudo yum install -y yum-utils device-mapper-persistent-data lvm2"
+      "sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo"
+      "sudo yum-config-manager --enable docker-ce-nightly"
+      "sudo yum-config-manager --enable docker-ce-test"
+      "sudo yum-config-manager --disable docker-ce-nightly"
+      "sudo yum install docker-ce docker-ce-cli containerd.io"
+      ""
     ]
   }
   tags = {
-    Name = "Jenkins"
+    Name = "Docker"
   }
 }
