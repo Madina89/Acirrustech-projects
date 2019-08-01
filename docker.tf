@@ -3,7 +3,7 @@ resource "aws_instance" "docker" {
   ami                         = "${var.ami}"
   key_name                    = "${var.key_name}"
   associate_public_ip_address = "true"
-  security_groups             = ["allow_ssh_and_docker"]
+  security_groups             = ["allow_ssh_and_jenkins"]
 
 
   provisioner "remote-exec" {
@@ -15,8 +15,12 @@ resource "aws_instance" "docker" {
     }
 
     inline = [
-      "sudo yum install epel-release && yum install docker"
-      "sudo systemctl start docker"
+      "sudo yum install -y yum-utils device-mapper-persistent-data lvm2",
+      "sudo yum-config-manager  --add-repo https://download.docker.com/linux/centos/docker-ce.repo",
+      "sudo yum-config-manager --enable docker-ce-nightly",
+      "sudo yum-config-manager --enable docker-ce-test",
+      "sudo yum-config-manager --disable docker-ce-nightly",
+      "sudo yum install docker-ce docker-ce-cli containerd.io"
     ]
   }
   tags = {
