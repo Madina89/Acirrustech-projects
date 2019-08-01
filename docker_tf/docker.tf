@@ -1,4 +1,4 @@
-resource "aws_instance" "docker-dev" {
+resource "aws_instance" "docker" {
   instance_type               = "${var.instance_type}"
   ami                         = "${var.ami}"
   key_name                    = "${var.key_name}"
