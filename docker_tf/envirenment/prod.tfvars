@@ -8,4 +8,4 @@ zone_id = "Z32OHGRMBVZ9LR" # Hosted DNS zone and ID was added here
 domain = "acirrustech.com"
 region = "us-east-2"
 tag_name = "Docker-Prod"
-backend_key = "prod/state"
+backend_key = "Env/state"
