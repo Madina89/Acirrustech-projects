@@ -21,7 +21,7 @@ resource "aws_instance" "docker" {
     
   }
 
-  # tags = {
-  #   Name = "${var.tag_name}"
-  # }
+  tags = {
+    Name = "${var.tag_name}"
+  }
 }

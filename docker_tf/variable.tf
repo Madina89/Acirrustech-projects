@@ -4,8 +4,8 @@ variable "ami" {}
 variable "vpc_id" {}
 variable "user" {}
 variable "ssh_key_location" {}
-# variable "zone_id" {}
-# variable "domain" {}
+variable "zone_id" {}
+variable "domain" {}
 variable "region" {}
-# variable "tag_name" {}
+variable "tag_name" {}
 variable "backend_key" {}
