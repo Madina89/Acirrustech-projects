@@ -1,6 +1,6 @@
 resource "aws_route53_record" "docker" {
   zone_id = "${var.zone_id}"
-  name    = [
+  names    = [
     "docker.${var.domain}",
     "docker.${var.domain}",
     "docker.${var.domain}",
