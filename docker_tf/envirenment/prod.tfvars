@@ -5,11 +5,7 @@ vpc_id = "vpc-4a2c1522"
 user = "centos"  # Centos7 image
 ssh_key_location = "/ssh_keys/app_rsa" # Iport public key pair to AWS as "terraform"
 zone_id = "Z32OHGRMBVZ9LR" # Hosted DNS zone and ID was added here
-domain = "dev.acirrustech.com"
+domain = "prod.acirrustech.com"
 region = "us-east-2"
-tag_name = "Docker-Dev"
-backend_key = "Dev/state"
-
-
-
-
+tag_name = "Docker-Prod"
+backend_key = "Prod/state"
