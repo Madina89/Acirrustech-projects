@@ -11,7 +11,7 @@ resource "aws_route53_record" "docker" {
   records = ["${aws_instance.docker.public_ip}"]
 
 }
-resource "aws_route53_record" "docker" {
+resource "aws_route53_record" "docker1" {
 
   zone_id = "${var.zone_id}"
 
@@ -25,7 +25,7 @@ resource "aws_route53_record" "docker" {
 
 }
 
-resource "aws_route53_record" "docker" {
+resource "aws_route53_record" "docker2" {
 
   zone_id = "${var.zone_id}"
 
