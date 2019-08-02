@@ -9,3 +9,4 @@ variable "domain" {}
 variable "region" {}
 variable "tag_name" {}
 variable "backend_key" {}
+variable "region"  {}
